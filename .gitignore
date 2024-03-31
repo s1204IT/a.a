@@ -1,0 +1,4 @@
+# Gradle
+/.gradle/
+# Gradle Build
+/app/build/

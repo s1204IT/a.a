@@ -1,0 +1,35 @@
+plugins {
+    id 'com.android.application'
+}
+
+android {
+    compileSdk 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId 'a.a'
+        minSdk 24
+        targetSdk 33
+        proguardFiles += 'proguard-rules.pro'
+    }
+
+    signingConfigs {
+        android {
+            storeFile file('android.jks')
+            storePassword 'android'
+            keyAlias 'android'
+            keyPassword 'android'
+        }
+    }
+
+    buildTypes {
+        all {
+            signingConfig signingConfigs.android
+        }
+        release {
+            debuggable true
+            minifyEnabled true
+            shrinkResources true
+        }
+    }
+}
